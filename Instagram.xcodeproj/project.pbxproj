@@ -12,7 +12,7 @@
 		932742E39624DB27975C1C7C /* Pods_Instagram_InstagramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A074E71A24F74A5A20BA70 /* Pods_Instagram_InstagramUITests.framework */; };
 		BAC7723E286A40C6006F49DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC7723D286A40C6006F49DB /* AppDelegate.m */; };
 		BAC77241286A40C6006F49DB /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC77240286A40C6006F49DB /* SceneDelegate.m */; };
-		BAC77244286A40C6006F49DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC77243286A40C6006F49DB /* ViewController.m */; };
+		BAC77244286A40C6006F49DB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC77243286A40C6006F49DB /* LoginViewController.m */; };
 		BAC77247286A40C6006F49DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAC77245286A40C6006F49DB /* Main.storyboard */; };
 		BAC77249286A40C7006F49DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAC77248286A40C7006F49DB /* Assets.xcassets */; };
 		BAC7724C286A40C7006F49DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAC7724A286A40C7006F49DB /* LaunchScreen.storyboard */; };
@@ -50,8 +50,8 @@
 		BAC7723D286A40C6006F49DB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BAC7723F286A40C6006F49DB /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		BAC77240286A40C6006F49DB /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		BAC77242286A40C6006F49DB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BAC77243286A40C6006F49DB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BAC77242286A40C6006F49DB /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		BAC77243286A40C6006F49DB /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		BAC77246286A40C6006F49DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BAC77248286A40C7006F49DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAC7724B286A40C7006F49DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,7 +106,6 @@
 				F85B588524FEFE7711228C5E /* Pods-InstagramTests.debug.xcconfig */,
 				2B0F305912FD10741EC10AA5 /* Pods-InstagramTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -149,8 +148,8 @@
 				BAC7723D286A40C6006F49DB /* AppDelegate.m */,
 				BAC7723F286A40C6006F49DB /* SceneDelegate.h */,
 				BAC77240286A40C6006F49DB /* SceneDelegate.m */,
-				BAC77242286A40C6006F49DB /* ViewController.h */,
-				BAC77243286A40C6006F49DB /* ViewController.m */,
+				BAC77242286A40C6006F49DB /* LoginViewController.h */,
+				BAC77243286A40C6006F49DB /* LoginViewController.m */,
 				BAC77245286A40C6006F49DB /* Main.storyboard */,
 				BAC77248286A40C7006F49DB /* Assets.xcassets */,
 				BAC7724A286A40C7006F49DB /* LaunchScreen.storyboard */,
@@ -415,7 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAC77244286A40C6006F49DB /* ViewController.m in Sources */,
+				BAC77244286A40C6006F49DB /* LoginViewController.m in Sources */,
 				BAC7723E286A40C6006F49DB /* AppDelegate.m in Sources */,
 				BAC7724F286A40C7006F49DB /* main.m in Sources */,
 				BAC77241286A40C6006F49DB /* SceneDelegate.m in Sources */,
