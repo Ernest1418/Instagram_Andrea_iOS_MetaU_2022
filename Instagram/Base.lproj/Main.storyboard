@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="K0P-7c-FBX">
             <objects>
-                <viewController id="h70-M3-ums" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="h70-M3-ums" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lbx-iw-BIh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,6 +77,7 @@
                             <constraint firstItem="Rvd-ao-oUr" firstAttribute="centerY" secondItem="1FY-Rw-1jP" secondAttribute="centerY" id="oJm-K1-OzQ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="FkV-Ts-CFq"/>
                     <connections>
                         <outlet property="loginButton" destination="1FY-Rw-1jP" id="9Ut-5b-4X6"/>
                         <outlet property="passwordTextField" destination="id9-Vh-hmV" id="wPy-wX-dpr"/>
@@ -94,7 +95,7 @@
             <objects>
                 <viewController id="sVc-Zn-7d1" customClass="HomeFeedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ghv-Ox-e8k">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Fge-my-Py9">
@@ -143,7 +144,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home Feed" id="AAY-HZ-uM9">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="6rr-N8-X1f"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="6rr-N8-X1f">
+                            <connections>
+                                <action selector="tapLogoutButton:" destination="sVc-Zn-7d1" id="BKF-Gi-zNZ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="insta_camera_btn" id="iHv-BN-a6D"/>
                     </navigationItem>
                     <connections>
@@ -208,7 +213,7 @@
             <objects>
                 <viewController id="pNh-qr-5JA" customClass="ProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jch-UN-mQj">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="1jK-xm-bQU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -222,7 +227,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="iGB-Q1-mrd">
             <objects>
-                <tabBarController id="jgQ-wa-ezo" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="jgQ-wa-ezo" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backgroundImage="feed_tab" id="Mtj-Cc-N10">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -244,7 +249,7 @@
                     <tabBarItem key="tabBarItem" title="Feed" image="house.fill" catalog="system" selectedImage="feed_tab" id="biJ-mk-JpA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eGD-ti-6Oa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -281,7 +286,7 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="profile_tab" id="ONu-2A-Pq6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lxK-dw-oq1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
