@@ -8,6 +8,8 @@
 #import "ComposeViewController.h"
 #import "HomeFeedViewController.h"
 #import "SceneDelegate.h"
+#import "Post.h"
+#import <Parse/Parse.h>
 
 @interface ComposeViewController ()
 
@@ -16,7 +18,17 @@
 @implementation ComposeViewController
 
 - (IBAction)didTapShare:(id)sender {
+    [Post postUserImage:self.composePostImageView.image withCaption:self.composeCaptionTextField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        if(error){
+            NSLog(@"Error posting image: %@", error.localizedDescription);
+        }
+        else{
+            //[self.delegate didPost:post];
+            NSLog(@"Posted Image, Success!");
+        }
+    }];
     
+    [self dismissViewControllerAnimated:true completion:nil];
 }
 
 - (IBAction)didTapSelectImage:(id)sender {
@@ -46,7 +58,7 @@
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
 
     // Upload image into the compose post image view and also resize the image to be 150 by 150 dimensions
-    [self.composePostImageView setImage:[self resizeImage:originalImage withSize:CGSizeMake(150, 150)]];
+    [self.composePostImageView setImage:[self resizeImage:originalImage withSize:CGSizeMake(150,150)]];
     
     // Dismiss UIImagePickerController to go back to the original view controller (Compose)
     [self dismissViewControllerAnimated:YES completion:nil];

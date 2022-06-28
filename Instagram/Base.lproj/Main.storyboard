@@ -113,11 +113,9 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kRr-7X-VSZ">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
-                                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is my caption ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6T-AD-epS">
                                                     <rect key="frame" x="10" y="422" width="393" height="21"/>
-                                                    <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -134,7 +132,6 @@
                                                 <constraint firstItem="kRr-7X-VSZ" firstAttribute="top" secondItem="HsO-KM-yHk" secondAttribute="top" id="hxg-cD-T27"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <accessibility key="accessibilityConfiguration" identifier="HomeFeedTableViewCell"/>
                                         <connections>
                                             <outlet property="instagramPostImageView" destination="kRr-7X-VSZ" id="AZv-Re-kTp"/>
@@ -160,6 +157,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="postTableView" destination="Fge-my-Py9" id="guR-cd-nwl"/>
                         <segue destination="ocy-3E-sM1" kind="presentation" identifier="ComposeSegue" id="vlj-uw-pqj"/>
                     </connections>
                 </viewController>
@@ -395,9 +393,6 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemCyanColor">
             <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
@@ -406,9 +401,6 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
