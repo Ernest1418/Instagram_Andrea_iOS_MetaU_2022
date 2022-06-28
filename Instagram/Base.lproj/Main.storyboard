@@ -223,7 +223,11 @@
                                 <action selector="didTapCancel:" destination="NbK-ci-SSk" id="3Tb-iF-CqZ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Share" id="qu5-ml-1u5"/>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="qu5-ml-1u5">
+                            <connections>
+                                <action selector="didTapShare:" destination="NbK-ci-SSk" id="6G5-M4-t4R"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="composeCaptionTextField" destination="RQC-J1-5qC" id="ajH-6w-1bM"/>

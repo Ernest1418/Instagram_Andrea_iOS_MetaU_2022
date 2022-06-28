@@ -15,6 +15,10 @@
 
 @implementation ComposeViewController
 
+- (IBAction)didTapShare:(id)sender {
+    
+}
+
 - (IBAction)didTapSelectImage:(id)sender {
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
@@ -39,15 +43,13 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
     // Get the image captured by the UIImagePickerController
-        UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
-        UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
 
-        // Do something with the images (based on your use case)
+    // Upload image into the compose post image view and also resize the image to be 150 by 150 dimensions
+    [self.composePostImageView setImage:[self resizeImage:originalImage withSize:CGSizeMake(150, 150)]];
     
-        [self.composePostImageView setImage:editedImage];
-    
-        // Dismiss UIImagePickerController to go back to your original view controller
-        [self dismissViewControllerAnimated:YES completion:nil];
+    // Dismiss UIImagePickerController to go back to the original view controller (Compose)
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
