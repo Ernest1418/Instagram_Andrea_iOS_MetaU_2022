@@ -9,12 +9,22 @@
 #import <Parse/Parse.h>
 #import "SceneDelegate.h"
 #import "LoginViewController.h"
+#import "ComposeViewController.h"
 
 @interface HomeFeedViewController ()
 
 @end
 
 @implementation HomeFeedViewController
+
+- (IBAction)tapPostButton:(id)sender {
+    SceneDelegate *sceneDelegate = (SceneDelegate *)[UIApplication sharedApplication].connectedScenes.allObjects.firstObject.delegate;
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    ComposeViewController *composeViewController = [storyboard instantiateViewControllerWithIdentifier:@"ComposeViewController"];
+    sceneDelegate.window.rootViewController = composeViewController;
+}
 
 - (IBAction)tapLogoutButton:(id)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {

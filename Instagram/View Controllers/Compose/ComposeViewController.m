@@ -6,12 +6,23 @@
 //
 
 #import "ComposeViewController.h"
+#import "HomeFeedViewController.h"
+#import "SceneDelegate.h"
 
 @interface ComposeViewController ()
 
 @end
 
 @implementation ComposeViewController
+
+- (IBAction)didTapCancel:(id)sender {
+    SceneDelegate *sceneDelegate = (SceneDelegate *)[UIApplication sharedApplication].connectedScenes.allObjects.firstObject.delegate;
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    HomeFeedViewController *homeFeedViewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeFeedViewController"];
+    sceneDelegate.window.rootViewController = homeFeedViewController;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

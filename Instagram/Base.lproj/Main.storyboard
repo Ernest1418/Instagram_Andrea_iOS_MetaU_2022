@@ -112,6 +112,7 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kRr-7X-VSZ">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                                    <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is my caption ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6T-AD-epS">
                                                     <rect key="frame" x="10" y="422" width="393" height="21"/>
@@ -149,7 +150,11 @@
                                 <action selector="tapLogoutButton:" destination="sVc-Zn-7d1" id="BKF-Gi-zNZ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="insta_camera_btn" id="iHv-BN-a6D"/>
+                        <barButtonItem key="rightBarButtonItem" image="insta_camera_btn" id="iHv-BN-a6D">
+                            <connections>
+                                <action selector="tapPostButton:" destination="sVc-Zn-7d1" id="FjI-Qn-gXY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="ocy-3E-sM1" kind="presentation" id="vlj-uw-pqj"/>
@@ -159,10 +164,10 @@
             </objects>
             <point key="canvasLocation" x="2873.913043478261" y="467.41071428571428"/>
         </scene>
-        <!--Compose View Controller-->
+        <!-- hi-->
         <scene sceneID="Ot8-ck-H6Z">
             <objects>
-                <viewController id="NbK-ci-SSk" customClass="ComposeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ComposeViewController" id="NbK-ci-SSk" customClass="ComposeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wRF-51-hYR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -173,34 +178,43 @@
                             </navigationBar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lpV-98-ozO">
                                 <rect key="frame" x="20" y="56" width="150" height="150"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="Zbn-41-w90"/>
                                     <constraint firstAttribute="width" constant="150" id="tD1-2y-jPc"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write a caption..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4C-yP-7QM">
-                                <rect key="frame" x="190" y="56" width="204" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write a caption..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RQC-J1-5qC">
+                                <rect key="frame" x="190" y="56" width="204" height="150"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="pB7-Tf-Kwz"/>
+                                </constraints>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4Hg-zD-ddK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="M4C-yP-7QM" firstAttribute="top" secondItem="4Hg-zD-ddK" secondAttribute="top" id="DS1-Jo-fwa"/>
-                            <constraint firstItem="4Hg-zD-ddK" firstAttribute="trailing" secondItem="M4C-yP-7QM" secondAttribute="trailing" constant="20" id="NCG-JN-AOL"/>
+                            <constraint firstItem="4Hg-zD-ddK" firstAttribute="trailing" secondItem="RQC-J1-5qC" secondAttribute="trailing" constant="20" id="Hej-Pf-C4Q"/>
+                            <constraint firstItem="RQC-J1-5qC" firstAttribute="top" secondItem="4Hg-zD-ddK" secondAttribute="top" id="Ski-Xo-vsW"/>
+                            <constraint firstItem="RQC-J1-5qC" firstAttribute="leading" secondItem="lpV-98-ozO" secondAttribute="trailing" constant="20" id="Xsf-AJ-gnl"/>
                             <constraint firstItem="lpV-98-ozO" firstAttribute="leading" secondItem="4Hg-zD-ddK" secondAttribute="leading" constant="20" id="fqq-Jq-SZx"/>
-                            <constraint firstItem="M4C-yP-7QM" firstAttribute="leading" secondItem="lpV-98-ozO" secondAttribute="trailing" constant="20" id="jhe-IL-iGo"/>
                             <constraint firstItem="lpV-98-ozO" firstAttribute="top" secondItem="4Hg-zD-ddK" secondAttribute="top" id="kFf-Ls-hS6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="50Y-1k-rS2">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="W0g-of-ezb"/>
+                    <navigationItem key="navigationItem" title=" hi" id="50Y-1k-rS2">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="W0g-of-ezb">
+                            <connections>
+                                <action selector="didTapCancel:" destination="NbK-ci-SSk" id="3Tb-iF-CqZ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Share" id="qu5-ml-1u5"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="composeCaptionLabel" destination="M4C-yP-7QM" id="zVv-BI-cBf"/>
+                        <outlet property="composeCaptionTextField" destination="RQC-J1-5qC" id="ajH-6w-1bM"/>
                         <outlet property="composePostImageView" destination="lpV-98-ozO" id="hDL-yl-yra"/>
                     </connections>
                 </viewController>
@@ -306,6 +320,9 @@
         <image name="profile_tab" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
