@@ -21,6 +21,9 @@
     return @"Post";
 }
 
+
+/* Method to add a user post to Parse (uploading image file) that has a parameter image: Image that the user wants upload to parse, parameter caption: Caption text input by the user, and parameter completion: Block to be executed after save operation is complete */
+
 + (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion {
     
     Post *newPost = [Post new];
@@ -32,6 +35,8 @@
     
     [newPost saveInBackgroundWithBlock: completion];
 }
+
+/* Method to convert UIImage to PFFile that takes in a parameter image: Image that the user wants to upload to parse and returns: PFFile for the the data in the image */
 
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {
  

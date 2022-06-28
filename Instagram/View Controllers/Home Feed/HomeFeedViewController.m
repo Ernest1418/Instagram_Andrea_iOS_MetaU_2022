@@ -17,13 +17,13 @@
 
 @implementation HomeFeedViewController
 
-- (IBAction)tapPostButton:(id)sender {
+- (IBAction)tapComposeButton:(id)sender {
     SceneDelegate *sceneDelegate = (SceneDelegate *)[UIApplication sharedApplication].connectedScenes.allObjects.firstObject.delegate;
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    ComposeViewController *composeViewController = [storyboard instantiateViewControllerWithIdentifier:@"ComposeViewController"];
-    sceneDelegate.window.rootViewController = composeViewController;
+    ComposeViewController *composeNavViewController = [storyboard instantiateViewControllerWithIdentifier:@"ComposeNav"];
+    sceneDelegate.window.rootViewController = composeNavViewController;
 }
 
 - (IBAction)tapLogoutButton:(id)sender {

@@ -14,7 +14,6 @@
 		BA4CBAAA286A5DC2000F229A /* HomeFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4CBAA9286A5DC2000F229A /* HomeFeedViewController.m */; };
 		BA4CBAAD286A5DD6000F229A /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4CBAAC286A5DD6000F229A /* ComposeViewController.m */; };
 		BA4CBAB1286A62EC000F229A /* HomeFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4CBAB0286A62EC000F229A /* HomeFeedTableViewCell.m */; };
-		BA4CBAB9286B5942000F229A /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4CBAB8286B5942000F229A /* PhotoViewController.m */; };
 		BA4CBABF286B5EE4000F229A /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4CBABE286B5EE4000F229A /* Post.m */; };
 		BAC7723E286A40C6006F49DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC7723D286A40C6006F49DB /* AppDelegate.m */; };
 		BAC77241286A40C6006F49DB /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC77240286A40C6006F49DB /* SceneDelegate.m */; };
@@ -59,8 +58,6 @@
 		BA4CBAAC286A5DD6000F229A /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		BA4CBAAF286A62EC000F229A /* HomeFeedTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFeedTableViewCell.h; sourceTree = "<group>"; };
 		BA4CBAB0286A62EC000F229A /* HomeFeedTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFeedTableViewCell.m; sourceTree = "<group>"; };
-		BA4CBAB7286B5942000F229A /* PhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
-		BA4CBAB8286B5942000F229A /* PhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		BA4CBABD286B5EE4000F229A /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		BA4CBABE286B5EE4000F229A /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		BAC77239286A40C6006F49DB /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,7 +137,6 @@
 		BA4CBAAE286A603E000F229A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BA4CBABA286B594B000F229A /* Photo */,
 				BA4CBAB6286A648E000F229A /* Login */,
 				BA4CBAB5286A647E000F229A /* Compose */,
 				BA4CBAB4286A6468000F229A /* Home Feed */,
@@ -192,15 +188,6 @@
 				BAC77243286A40C6006F49DB /* LoginViewController.m */,
 			);
 			path = Login;
-			sourceTree = "<group>";
-		};
-		BA4CBABA286B594B000F229A /* Photo */ = {
-			isa = PBXGroup;
-			children = (
-				BA4CBAB7286B5942000F229A /* PhotoViewController.h */,
-				BA4CBAB8286B5942000F229A /* PhotoViewController.m */,
-			);
-			path = Photo;
 			sourceTree = "<group>";
 		};
 		BA4CBABB286B5EA9000F229A /* Models */ = {
@@ -523,7 +510,6 @@
 				BAC7724F286A40C7006F49DB /* main.m in Sources */,
 				BA4CBABF286B5EE4000F229A /* Post.m in Sources */,
 				BA4CBAAD286A5DD6000F229A /* ComposeViewController.m in Sources */,
-				BA4CBAB9286B5942000F229A /* PhotoViewController.m in Sources */,
 				BAC77241286A40C6006F49DB /* SceneDelegate.m in Sources */,
 				BA4CBAA7286A5D9A000F229A /* ProfileViewController.m in Sources */,
 			);
