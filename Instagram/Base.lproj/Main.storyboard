@@ -93,7 +93,7 @@
         <!--Home Feed-->
         <scene sceneID="acD-7p-zxR">
             <objects>
-                <viewController id="sVc-Zn-7d1" customClass="HomeFeedViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeFeedViewController" id="sVc-Zn-7d1" customClass="HomeFeedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ghv-Ox-e8k">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -245,7 +245,7 @@
         <!--Feed-->
         <scene sceneID="DlG-6M-Tw7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jbu-CG-Uv1" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavController" automaticallyAdjustsScrollViewInsets="NO" id="jbu-CG-Uv1" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Feed" image="house.fill" catalog="system" selectedImage="feed_tab" id="biJ-mk-JpA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eGD-ti-6Oa">
