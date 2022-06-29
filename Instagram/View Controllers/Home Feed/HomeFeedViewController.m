@@ -57,7 +57,7 @@
 }
 
 - (void)didPost:(nonnull Post *)post {
-    [self.arrayOfPosts addObject:post];
+    [self.arrayOfPosts insertObject:post atIndex:0];
     [self.postTableView reloadData];
 }
 

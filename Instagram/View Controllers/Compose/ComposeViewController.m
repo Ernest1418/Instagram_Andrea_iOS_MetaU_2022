@@ -58,7 +58,7 @@
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
 
     // Upload image into the compose post image view and also resize the image to be 150 by 150 dimensions
-    [self.composePostImageView setImage:[self resizeImage:originalImage withSize:CGSizeMake(150,150)]];
+    [self.composePostImageView setImage:[self resizeImage:originalImage withSize:CGSizeMake(414,414)]];
     
     // Dismiss UIImagePickerController to go back to the original view controller (Compose)
     [self dismissViewControllerAnimated:YES completion:nil];
