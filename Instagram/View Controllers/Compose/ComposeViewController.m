@@ -23,7 +23,7 @@
             NSLog(@"Error posting image: %@", error.localizedDescription);
         }
         else{
-            //[self.delegate didPost:post];
+            [self.delegate didPost:self.post];
             NSLog(@"Posted Image, Success!");
         }
     }];
@@ -90,6 +90,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.composeCaptionTextField.delegate = self;
 }
 
 /*

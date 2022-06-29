@@ -14,7 +14,7 @@
 #import "HomeFeedTableViewCell.h"
 #import "DetailPostViewController.h"
 
-@interface HomeFeedViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface HomeFeedViewController () <ComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *postTableView;
 
@@ -53,7 +53,7 @@
     self.postTableView.delegate = self;
     self.postTableView.rowHeight = UITableViewAutomaticDimension;
     
-    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(onTimer) userInfo:nil repeats:true];
+    //[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(onTimer) userInfo:nil repeats:true];
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
     [self.postTableView insertSubview:refreshControl atIndex:0];
@@ -85,8 +85,6 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    // UINavigationController *navigationController = [segue destinationViewController];
-    
     if([segue.identifier isEqualToString:@"DetailSegue"]) {
         Post *cell = sender;
         NSIndexPath *myIndexPath = [self.postTableView indexPathForCell:cell];
@@ -94,6 +92,10 @@
         Post *dataToPass = self.arrayOfPosts[myIndexPath.row];
         DetailPostViewController *detailVC = [segue destinationViewController];
         detailVC.detailPost = dataToPass;
+    } else if([segue.identifier isEqualToString:@"ComposeNav"]) {
+        UINavigationController *navigationController = [segue destinationViewController];
+            ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
+            composeController.delegate = self;
     }
 }
 
@@ -116,10 +118,10 @@
     return self.arrayOfPosts.count;
 }
 
-- (void)onTimer {
-   // Add code to be run periodically
-    [self refreshData];
-}
+//- (void)onTimer {
+//   // Add code to be run periodically
+//    [self refreshData];
+//}
 
 - (void)refreshData {
     // Construct query

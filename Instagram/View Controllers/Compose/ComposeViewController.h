@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *selectImageButton;
 @property (weak, nonatomic) IBOutlet UITextView *composeCaptionTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *composePostImageView;
+@property (nonatomic, strong) id<ComposeViewControllerDelegate> delegate;
+@property (nonatomic, strong) Post *post;
 
 @end
 

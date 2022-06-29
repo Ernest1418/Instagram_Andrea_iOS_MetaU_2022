@@ -28,8 +28,19 @@
         
     self.detailPostImageView.image = [UIImage imageWithData:postData];
     
+    // TODO: Format and set createdAtDate
+    NSDate *createdAtOriginalDate = self.detailPost.createdAt;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    // Configure the input format to parse the date string in a format like "Wed Aug 27 13:08:45 +0000 2008”
+    formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
+    
+    // Configure output format
+    formatter.dateStyle = NSDateFormatterShortStyle;
+    formatter.timeStyle = NSDateFormatterShortStyle;
+    
     // Set up date text label
-    //self.detailTimeAgoLabel.text = self.detailPost.createdAtString;
+    self.detailTimeAgoLabel.text = [formatter stringFromDate:createdAtOriginalDate];;
     
 }
 
