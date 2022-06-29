@@ -50,9 +50,7 @@ static NSString * const reuseIdentifier = @"Cell";
     self.usernameProfileLabel.text = [@"@" stringByAppendingString:post.author.username];
     
     PFFileObject* obj = post.image;
-    
     NSData* postImageData = obj.getData;
-    
     cell.profilePostImage.image = [UIImage imageWithData:postImageData];
     
     return cell;
@@ -66,9 +64,6 @@ static NSString * const reuseIdentifier = @"Cell";
     // Construct query
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     query.limit = 20;
-    
-    // Sort the query results
-    //[query orderByDescending:@"createdAt"];
     
     // Instruct Parse to fetch the related user when we query for messages
     [query includeKey:@"author"];

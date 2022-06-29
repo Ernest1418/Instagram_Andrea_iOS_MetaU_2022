@@ -12,6 +12,7 @@
 #import "ComposeViewController.h"
 #import "Post.h"
 #import "HomeFeedTableViewCell.h"
+#import "DetailPostViewController.h"
 
 @interface HomeFeedViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -53,7 +54,22 @@
     self.postTableView.rowHeight = UITableViewAutomaticDimension;
     
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(onTimer) userInfo:nil repeats:true];
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
+    [self.postTableView insertSubview:refreshControl atIndex:0];
+}
 
+// Makes a query request to get updated data
+// Updates the tableView with the new data
+// Hides the RefreshControl
+- (void)beginRefresh:(UIRefreshControl *)refreshControl {
+    [self refreshData];
+
+    // Reload the tableView now that there is new data
+    [self.postTableView reloadData];
+
+    // Tell the refreshControl to stop spinning
+    [refreshControl endRefreshing];
 }
 
 - (void)didPost:(nonnull Post *)post {
@@ -61,15 +77,26 @@
     [self.postTableView reloadData];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    // UINavigationController *navigationController = [segue destinationViewController];
+    
+    if([segue.identifier isEqualToString:@"DetailSegue"]) {
+        Post *cell = sender;
+        NSIndexPath *myIndexPath = [self.postTableView indexPathForCell:cell];
+        
+        Post *dataToPass = self.arrayOfPosts[myIndexPath.row];
+        DetailPostViewController *detailVC = [segue destinationViewController];
+        detailVC.detailPost = dataToPass;
+    }
 }
-*/
+
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     HomeFeedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeFeedTableViewCell" forIndexPath:indexPath];
@@ -77,16 +104,10 @@
     Post *post = self.arrayOfPosts[indexPath.row];
     PFFileObject* obj = post.image;
     
-    NSData* idk = obj.getData;
-    
-    //NSMutableData* idk = [NSMutableData dataWithContentsOfFile:obj];
-    
-    cell.instagramPostImageView.image = [UIImage imageWithData:idk];
+    NSData* postData = obj.getData;
+        
+    cell.instagramPostImageView.image = [UIImage imageWithData:postData];
     cell.postCaptionLabel.text = post.caption;
-    
-    //cell.instagramPostImageView.image = post.image;
-    
-    //PFUser *user = post[@"author"];
     
     return cell;
 }
@@ -104,9 +125,6 @@
     // Construct query
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     query.limit = 20;
-    
-    // Sort the query results
-    //[query orderByDescending:@"createdAt"];
     
     // Instruct Parse to fetch the related user when we query for messages
     [query includeKey:@"author"];

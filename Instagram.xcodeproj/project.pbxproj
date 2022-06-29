@@ -16,6 +16,7 @@
 		BA4CBAB1286A62EC000F229A /* HomeFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4CBAB0286A62EC000F229A /* HomeFeedTableViewCell.m */; };
 		BA4CBABF286B5EE4000F229A /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4CBABE286B5EE4000F229A /* Post.m */; };
 		BA4CBB03286C11BF000F229A /* ProfilePostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4CBB02286C11BF000F229A /* ProfilePostCollectionViewCell.m */; };
+		BA4CBB08286CB15C000F229A /* DetailPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4CBB07286CB15C000F229A /* DetailPostViewController.m */; };
 		BAC7723E286A40C6006F49DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC7723D286A40C6006F49DB /* AppDelegate.m */; };
 		BAC77241286A40C6006F49DB /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC77240286A40C6006F49DB /* SceneDelegate.m */; };
 		BAC77244286A40C6006F49DB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC77243286A40C6006F49DB /* LoginViewController.m */; };
@@ -63,6 +64,8 @@
 		BA4CBABE286B5EE4000F229A /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		BA4CBB01286C11BF000F229A /* ProfilePostCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfilePostCollectionViewCell.h; sourceTree = "<group>"; };
 		BA4CBB02286C11BF000F229A /* ProfilePostCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfilePostCollectionViewCell.m; sourceTree = "<group>"; };
+		BA4CBB06286CB15C000F229A /* DetailPostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailPostViewController.h; sourceTree = "<group>"; };
+		BA4CBB07286CB15C000F229A /* DetailPostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailPostViewController.m; sourceTree = "<group>"; };
 		BAC77239286A40C6006F49DB /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC7723C286A40C6006F49DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BAC7723D286A40C6006F49DB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -143,6 +146,7 @@
 				BA4CBAB6286A648E000F229A /* Login */,
 				BA4CBAB5286A647E000F229A /* Compose */,
 				BA4CBAB4286A6468000F229A /* Home Feed */,
+				BA4CBB09286CB160000F229A /* Detail Post */,
 				BA4CBAB3286A6458000F229A /* Profile View */,
 			);
 			path = "View Controllers";
@@ -226,6 +230,15 @@
 				BA4CBAB0286A62EC000F229A /* HomeFeedTableViewCell.m */,
 			);
 			path = "Home Feed";
+			sourceTree = "<group>";
+		};
+		BA4CBB09286CB160000F229A /* Detail Post */ = {
+			isa = PBXGroup;
+			children = (
+				BA4CBB06286CB15C000F229A /* DetailPostViewController.h */,
+				BA4CBB07286CB15C000F229A /* DetailPostViewController.m */,
+			);
+			path = "Detail Post";
 			sourceTree = "<group>";
 		};
 		BAC77230286A40C6006F49DB = {
@@ -526,6 +539,7 @@
 			files = (
 				BAC77244286A40C6006F49DB /* LoginViewController.m in Sources */,
 				BA4CBAAA286A5DC2000F229A /* HomeFeedViewController.m in Sources */,
+				BA4CBB08286CB15C000F229A /* DetailPostViewController.m in Sources */,
 				BA4CBAB1286A62EC000F229A /* HomeFeedTableViewCell.m in Sources */,
 				BAC7723E286A40C6006F49DB /* AppDelegate.m in Sources */,
 				BAC7724F286A40C7006F49DB /* main.m in Sources */,
