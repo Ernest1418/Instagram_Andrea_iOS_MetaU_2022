@@ -84,12 +84,12 @@
     }
 }
 
-- (void) loadMoreData:(NSInteger*)loadCount {
+- (void) loadMoreData:(NSInteger)loadCount {
     // Construct query
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-    NSNumber *count = [NSNumber numberWithInteger:loadCount];
+    //NSNumber *count = [NSNumber numberWithInteger:loadCount];
     
-    query.limit = count;
+    query.limit = loadCount;
     
     // Instruct Parse to fetch the related user when we query for messages
     [query includeKey:@"author"];
