@@ -46,7 +46,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://submissions.us-east-1.linodeobjects.com/metau_ios/Hp8mywdU.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/andrea-io/Instagram/blob/4c7a0cad7881aa76dc7b5d3919311edb0794e987/Instagram/Demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Credits
 
