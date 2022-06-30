@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeFeedTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *timeAgoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *postCaptionLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *instagramPostImageView;
 

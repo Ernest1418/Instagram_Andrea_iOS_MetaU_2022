@@ -18,7 +18,7 @@
     // Do any additional setup after loading the view.
     
     // Set up all text labels (User name, post caption)
-    self.detailPostUsernameLabel.text = self.detailPost.author.username;
+    self.detailPostUsernameLabel.text = [@"@" stringByAppendingString:self.detailPost.author.username];
     self.detailPostCaptionLabel.text = self.detailPost.caption;
 
     // Set up image view
@@ -28,7 +28,7 @@
         
     self.detailPostImageView.image = [UIImage imageWithData:postData];
     
-    // TODO: Format and set createdAtDate
+    // Format and set createdAtDate
     NSDate *createdAtOriginalDate = self.detailPost.createdAt;
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     

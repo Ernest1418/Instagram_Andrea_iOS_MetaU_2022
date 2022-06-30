@@ -134,13 +134,29 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     HomeFeedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeFeedTableViewCell" forIndexPath:indexPath];
     
+    // Retrieve image from post and convert into a UIIMage
     Post *post = self.arrayOfPosts[indexPath.row];
     PFFileObject* obj = post.image;
-    
     NSData* postData = obj.getData;
-        
     cell.instagramPostImageView.image = [UIImage imageWithData:postData];
+    
+    // Add post caption and post username to labels
     cell.postCaptionLabel.text = post.caption;
+    cell.usernameLabel.text = [@"@" stringByAppendingString:post.author.username];
+    
+    // Format and set createdAtDate
+    NSDate *createdAtOriginalDate = post.createdAt;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    // Configure the input format to parse the date string in a format like "Wed Aug 27 13:08:45 +0000 2008”
+    formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
+    
+    // Configure output format
+    formatter.dateStyle = NSDateFormatterShortStyle;
+    formatter.timeStyle = NSDateFormatterShortStyle;
+    
+    // Set up date text label
+    cell.timeAgoLabel.text = [formatter stringFromDate:createdAtOriginalDate];
     
     return cell;
 }
@@ -148,11 +164,6 @@
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.arrayOfPosts.count;
 }
-
-//- (void)onTimer {
-//   // Add code to be run periodically
-//    [self refreshData];
-//}
 
 - (void)refreshData {
     // Construct query
