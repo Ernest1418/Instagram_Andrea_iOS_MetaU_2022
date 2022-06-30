@@ -67,6 +67,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // Instruct Parse to fetch the related user when we query for messages
     [query includeKey:@"author"];
+    [query whereKey:@"author" equalTo:[PFUser currentUser]];
     
     // Fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {

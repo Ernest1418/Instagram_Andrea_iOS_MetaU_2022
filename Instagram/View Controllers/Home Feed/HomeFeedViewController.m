@@ -73,7 +73,7 @@
 }
 
 - (void)didPost:(nonnull Post *)post {
-    [self.arrayOfPosts insertObject:post atIndex:0];
+    //[self.arrayOfPosts insertObject:post atIndex:0];
     [self.postTableView reloadData];
 }
 
@@ -93,7 +93,8 @@
     
     // Instruct Parse to fetch the related user when we query for messages
     [query includeKey:@"author"];
-    
+    [query orderByDescending:@"createdAt"];
+
     // Fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
@@ -156,10 +157,10 @@
 - (void)refreshData {
     // Construct query
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-    //query.limit = 20;
     
     // Instruct Parse to fetch the related user when we query for messages
     [query includeKey:@"author"];
+    [query orderByDescending:@"createdAt"];
     
     // Fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
