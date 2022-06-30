@@ -350,11 +350,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LwR-cm-TvO">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LwR-cm-TvO">
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="LwR-cm-TvO" secondAttribute="trailing" id="GeV-13-OQG"/>
+                                                <constraint firstItem="LwR-cm-TvO" firstAttribute="top" secondItem="DRf-YM-Svy" secondAttribute="top" id="YzA-Op-lqQ"/>
+                                                <constraint firstItem="LwR-cm-TvO" firstAttribute="leading" secondItem="DRf-YM-Svy" secondAttribute="leading" id="bs9-h7-EDH"/>
+                                                <constraint firstAttribute="bottom" secondItem="LwR-cm-TvO" secondAttribute="bottom" id="hE2-xg-dMN"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
                                             <outlet property="profilePostImage" destination="LwR-cm-TvO" id="01S-Wo-QzG"/>
