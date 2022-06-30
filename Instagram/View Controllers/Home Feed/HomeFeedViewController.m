@@ -47,7 +47,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    [self loadMoreData:20];
     // Table View Set Up
     self.postTableView.dataSource = self;
     self.postTableView.delegate = self;
@@ -75,6 +75,36 @@
 - (void)didPost:(nonnull Post *)post {
     [self.arrayOfPosts insertObject:post atIndex:0];
     [self.postTableView reloadData];
+}
+
+ // STRETCH FEATURE: INFINITE SCROLLING
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.row + 1 == [self.arrayOfPosts count]){
+        [self loadMoreData:[self.arrayOfPosts count] + 20];
+    }
+}
+
+- (void) loadMoreData:(NSInteger*)loadCount {
+    // Construct query
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    NSNumber *count = [NSNumber numberWithInteger:loadCount];
+    
+    query.limit = count;
+    
+    // Instruct Parse to fetch the related user when we query for messages
+    [query includeKey:@"author"];
+    
+    // Fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        if (posts != nil) {
+            self.arrayOfPosts = [[NSMutableArray alloc] init];
+            [self.arrayOfPosts addObjectsFromArray:posts];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+        // Reload the tableView now that there is new data
+        [self.postTableView reloadData];
+    }];
 }
 
 
@@ -126,7 +156,7 @@
 - (void)refreshData {
     // Construct query
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-    query.limit = 20;
+    //query.limit = 20;
     
     // Instruct Parse to fetch the related user when we query for messages
     [query includeKey:@"author"];

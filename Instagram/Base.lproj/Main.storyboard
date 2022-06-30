@@ -263,11 +263,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CyT-xO-oa6">
-                                <rect key="frame" x="20" y="227" width="150" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="72M-Zf-60A"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="CyT-xO-oa6">
+                                <rect key="frame" x="20" y="227" width="154" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Select Image"/>
                                 <connections>
@@ -278,11 +275,13 @@
                         <viewLayoutGuide key="safeArea" id="4Hg-zD-ddK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="CyT-xO-oa6" firstAttribute="leading" secondItem="lpV-98-ozO" secondAttribute="leading" id="1uh-aG-z62"/>
                             <constraint firstItem="4Hg-zD-ddK" firstAttribute="trailing" secondItem="RQC-J1-5qC" secondAttribute="trailing" constant="20" id="Hej-Pf-C4Q"/>
                             <constraint firstItem="RQC-J1-5qC" firstAttribute="top" secondItem="4Hg-zD-ddK" secondAttribute="top" id="Ski-Xo-vsW"/>
                             <constraint firstItem="RQC-J1-5qC" firstAttribute="leading" secondItem="lpV-98-ozO" secondAttribute="trailing" constant="20" id="Xsf-AJ-gnl"/>
                             <constraint firstItem="lpV-98-ozO" firstAttribute="leading" secondItem="4Hg-zD-ddK" secondAttribute="leading" constant="20" id="fqq-Jq-SZx"/>
                             <constraint firstItem="lpV-98-ozO" firstAttribute="top" secondItem="4Hg-zD-ddK" secondAttribute="top" id="kFf-Ls-hS6"/>
+                            <constraint firstItem="4Hg-zD-ddK" firstAttribute="trailing" secondItem="CyT-xO-oa6" secondAttribute="trailing" constant="240" id="p4y-Nv-k1d"/>
                             <constraint firstItem="CyT-xO-oa6" firstAttribute="top" secondItem="lpV-98-ozO" secondAttribute="bottom" constant="21" id="tYH-u2-NaJ"/>
                             <constraint firstItem="CyT-xO-oa6" firstAttribute="leading" secondItem="4Hg-zD-ddK" secondAttribute="leading" constant="20" id="yGS-hD-btY"/>
                         </constraints>
